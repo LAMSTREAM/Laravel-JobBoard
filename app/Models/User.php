@@ -56,4 +56,14 @@ class User extends Authenticatable
     {
         return $this->role === 'poster';
     }
+
+    /**
+     * Get the job posts that the user is interested in.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function interestedJobPosts()
+    {
+        return $this->belongsToMany(JobPost::class, 'job_post_user')->withTimestamps();
+    }
 }
