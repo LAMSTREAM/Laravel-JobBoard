@@ -21,11 +21,20 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
         ]);
 
-        // Each poster creates 2 JobPosts
+        // Each poster creates 5 JobPosts
         $posters->each(function ($poster) {
             JobPost::factory(5)->create([
-                'user_id' => $poster->id
-            ]);
+                'user_id' => $poster->id,
+            ])->each(function ($jobPost) {
+                $createdAt = now()
+                    ->subDays(rand(0, 30))
+                    ->addHours(rand(0, 23))
+                    ->addMinutes(rand(0, 59));
+        
+                $jobPost->created_at = $createdAt;
+                $jobPost->updated_at = $createdAt;
+                $jobPost->save();
+            });
         });
 
         // Randomly add interested viewers to some job_posts

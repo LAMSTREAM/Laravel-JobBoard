@@ -54,6 +54,9 @@
                                 </ul>
                             @endif
                         </div>
+                        <div>
+                            <a href="{{ route('job-posts.index') }}" class="text-sm text-indigo-600 hover:underline">&larr; Back to Job List</a>
+                        </div>
                     @endif
                 </div>
             </div>
