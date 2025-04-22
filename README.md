@@ -1,6 +1,10 @@
-# JobBoard
+# Laravel JobBoard
 
-A simple Laravel-based job listing platform supporting job posting, interest tracking, user roles, and basic access control.
+A full-stack job posting platform built with Laravel 12, Breeze, and MySQL.
+
+### 🚀 Live Demo
+
+🔗 **[JobBoard Live Site](https://laravel-jobboard-production.up.railway.app/job-posts)**  
 
 ---
 
